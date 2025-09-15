@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kulshrestha Hospital Website
 
-## Getting Started
+A modern, responsive website for Kulshrestha Hospital built with Next.js 15, React 19, and Tailwind CSS.
 
-First, run the development server:
+## Features
+
+- Responsive design that works on all devices
+- Modern UI with animations and transitions
+- Contact form for patient inquiries
+- Appointment booking system
+- Admin dashboard for managing contacts and appointments
+- Automatic cleanup of old records (7 days)
+
+## Admin Dashboard
+
+The admin dashboard allows hospital staff to view and manage contact messages and appointment requests.
+
+### Access
+
+Navigate to `/admin` route to access the dashboard. No authentication is required.
+
+### Features
+
+1. **Contact Management**: View all contact form submissions
+2. **Appointment Management**: View all appointment requests
+3. **Date Filtering**: Filter records by specific dates
+4. **Automatic Cleanup**: Records are automatically deleted after 7 days
+
+### How It Works
+
+#### Data Storage
+- Contact form submissions are stored in the browser's localStorage
+- Appointment requests are stored in the browser's localStorage
+- Each record has a timestamp for automatic cleanup
+
+#### Automatic Cleanup
+- When the admin dashboard loads, it automatically removes records older than 7 days
+- This helps keep the dashboard clean and focused on recent inquiries
+
+#### Data Structure
+
+**Contacts**
+- Name
+- Email
+- Subject
+- Message
+- Date submitted
+
+**Appointments**
+- Patient Name
+- Mobile Number
+- Preferred Date
+- Preferred Time Slot
+- Message
+- Date submitted
+
+## Development
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Running Production Server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Note
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Since this system uses localStorage for data storage, all data is stored locally in the browser and will be lost if:
+- The browser's cache is cleared
+- A different browser/device is used
+- The user is in private/incognito mode
 
-## Deploy on Vercel
+For a production environment, this should be replaced with a proper backend database.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 15 with App Router
+- React 19
+- Tailwind CSS
+- TypeScript

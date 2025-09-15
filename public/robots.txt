@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Host
+Host: https://kulshrestha-hospital.com
+
+# Sitemaps
+Sitemap: https://kulshrestha-hospital.com/sitemap.xml
