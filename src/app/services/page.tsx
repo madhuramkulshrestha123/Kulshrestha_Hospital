@@ -234,7 +234,7 @@ export default function OurServices(): JSX.Element {
             Our Services
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive healthcare services designed to meet all your child's medical needs with compassion and expertise
+            Comprehensive healthcare services designed to meet all your child&#39;s medical needs with compassion and expertise
           </p>
           <div className="w-32 h-1 bg-gradient-to-r from-blue-300 to-purple-300 mx-auto mt-8 rounded-full"></div>
         </div>

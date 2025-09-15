@@ -329,7 +329,7 @@ export default function OurSpeciality(): JSX.Element {
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Specialized Medical Equipment</h3>
                 <p className="text-gray-600 mb-4">
                   We offer state-of-the-art medical facilities including hospitalization, phototherapy warmer, 
-                  and nebulization services specifically designed for children's healthcare needs.
+                  and nebulization services specifically designed for children&#39;s healthcare needs.
                 </p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">

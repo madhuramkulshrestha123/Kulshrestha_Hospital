@@ -2,6 +2,7 @@
 
 import type { JSX } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Home(): JSX.Element {
@@ -150,7 +151,7 @@ export default function Home(): JSX.Element {
           
           <div className="flex flex-wrap justify-center md:justify-evenly gap-3 sm:gap-4 w-full">
             {/* Phone Link */}
-            <a 
+            <Link 
               href="tel:05623568817" 
               className="flex items-center bg-white rounded-2xl shadow-md p-2 sm:p-3 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-blue-300 w-full sm:w-auto"
             >
@@ -161,10 +162,10 @@ export default function Home(): JSX.Element {
                 <div className="font-bold text-gray-800 text-sm sm:text-base">0562 356 8817</div>
                 <div className="text-xs text-gray-600">For Emergency</div>
               </div>
-            </a>
+            </Link>
             
             {/* Email Link */}
-            <a 
+            <Link 
               href="mailto:unnatkulshrestha81@gmail.com" 
               className="flex items-center bg-white rounded-2xl shadow-md p-2 sm:p-3 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-blue-300 w-full sm:w-auto"
             >
@@ -175,10 +176,10 @@ export default function Home(): JSX.Element {
                 <div className="font-bold text-gray-800 text-sm sm:text-base">Mail us</div>
                 <div className="text-xs text-gray-600">Email us for queries</div>
               </div>
-            </a>
+            </Link>
             
             {/* Location Link */}
-            <a 
+            <Link 
               href="https://maps.app.goo.gl/2fJXKTNuiBWDbqfm6" 
               className="flex items-center bg-white rounded-2xl shadow-md p-2 sm:p-3 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-blue-300 w-full sm:w-auto"
             >
@@ -189,10 +190,10 @@ export default function Home(): JSX.Element {
                 <div className="font-bold text-gray-800 text-sm sm:text-base">Saheed Nagar</div>
                 <div className="text-xs text-gray-600">Agra</div>
               </div>
-            </a>
+            </Link>
             
             {/* Book Appointment Button */}
-            <a 
+            <Link 
               href="/#book-appointment" 
               className="flex items-center bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl shadow-lg p-2 sm:p-3 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-blue-300 w-full sm:w-auto group"
             >
@@ -205,7 +206,7 @@ export default function Home(): JSX.Element {
                 <div className="font-bold text-white text-sm sm:text-base">Book Appointment</div>
                 <div className="text-xs text-blue-100">Schedule a visit</div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -216,22 +217,22 @@ export default function Home(): JSX.Element {
         <div className="hidden md:block container mx-auto">
           <ul className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4">
             <li>
-              <a href="/" className="block px-3 py-2 text-sm sm:text-base font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Home</a>
+              <Link href="/" className="block px-3 py-2 text-sm sm:text-base font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Home</Link>
             </li>
             <li>
-              <a href="/about" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">About Us</a>
+              <Link href="/about" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">About Us</Link>
             </li>
             <li>
-              <a href="/speciality" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Our Specialties</a>
+              <Link href="/speciality" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Our Specialties</Link>
             </li>
             <li>
-              <a href="/services" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Our Services</a>
+              <Link href="/services" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Our Services</Link>
             </li>
             <li>
-              <a href="/doctor" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Meet Our Doctor</a>
+              <Link href="/doctor" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Meet Our Doctor</Link>
             </li>
             <li>
-              <a href="/contact" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Contact Us</a>
+              <Link href="/contact" className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-600 hover:text-blue-800 hover:bg-blue-50 rounded-2xl transition-colors duration-200">Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -265,22 +266,22 @@ export default function Home(): JSX.Element {
               
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="block px-4 py-3 text-base font-medium text-blue-600 bg-blue-50 rounded-2xl">Home</a>
+                  <Link href="/" className="block px-4 py-3 text-base font-medium text-blue-600 bg-blue-50 rounded-2xl">Home</Link>
                 </li>
                 <li>
-                  <a href="/about" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">About Us</a>
+                  <Link href="/about" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">About Us</Link>
                 </li>
                 <li>
-                  <a href="/speciality" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Our Specialties</a>
+                  <Link href="/speciality" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Our Specialties</Link>
                 </li>
                 <li>
-                  <a href="/services" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Our Services</a>
+                  <Link href="/services" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Our Services</Link>
                 </li>
                 <li>
-                  <a href="/doctor" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Meet Our Doctor</a>
+                  <Link href="/doctor" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Meet Our Doctor</Link>
                 </li>
                 <li>
-                  <a href="/contact" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Contact Us</a>
+                  <Link href="/contact" className="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 rounded-2xl">Contact Us</Link>
                 </li>
               </ul>
             </div>
@@ -516,7 +517,7 @@ export default function Home(): JSX.Element {
       <div id="book-appointment" className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Book an Appointment</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Schedule your visit with our expert pediatricians. We provide exceptional care for your child's health and well-being.</p>
+          <p className="text-gray-600 max-w-2xl mx-auto">Schedule your visit with our expert pediatricians. We provide exceptional care for your child&#39;s health and well-being.</p>
           <div className="w-24 h-1 bg-blue-500 mx-auto mt-6 rounded-full"></div>
         </div>
         
@@ -545,7 +546,7 @@ export default function Home(): JSX.Element {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="patientName" className="block text-gray-800 font-medium mb-2">Patient's Name *</label>
+                    <label htmlFor="patientName" className="block text-gray-800 font-medium mb-2">Patient&#39;s Name *</label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <svg className="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

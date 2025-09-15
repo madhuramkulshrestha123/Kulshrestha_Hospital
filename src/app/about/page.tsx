@@ -366,7 +366,7 @@ export default function AboutUs(): JSX.Element {
                 </h2>
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                   <p className="text-gray-600 leading-relaxed">
-                    At Kulshrestha Hospital, we are committed to providing exceptional healthcare services to patients of all ages. The hospital&apos;s team of professionals is highly skilled and well-versed in the latest medical technologies and treatments.
+                    At Kulshrestha Hospital, we are committed to providing exceptional healthcare services to patients of all ages. The hospital&#39;s team of professionals is highly skilled and well-versed in the latest medical technologies and treatments.
                   </p>
                 </div>
               </div>
@@ -456,7 +456,7 @@ export default function AboutUs(): JSX.Element {
                 </h2>
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                   <p className="text-gray-600 leading-relaxed">
-                    Our hospital&apos;s commitment to excellence is reflected in our state-of-the-art facilities, advanced medical equipment, and a patient-centric approach that ensures the highest level of care and comfort for every individual who walks through our doors.
+                    Our hospital&#39;s commitment to excellence is reflected in our state-of-the-art facilities, advanced medical equipment, and a patient-centric approach that ensures the highest level of care and comfort for every individual who walks through our doors.
                   </p>
                 </div>
               </div>
@@ -486,10 +486,10 @@ export default function AboutUs(): JSX.Element {
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
                   <p className="text-gray-600 text-lg leading-relaxed">
                     Kulshrestha Hospital is a dedicated hospital in Saheed Nagar, Agra, that offers high-quality healthcare 
-                    services to patients of all ages. The hospital's team of professionals is highly skilled and well-versed 
+                    services to patients of all ages. The hospital&#39;s team of professionals is highly skilled and well-versed 
                     in their respective domains. Patients can expect to receive top-notch treatments, surgeries, and procedures 
                     at the hospital. Additionally, Kulshrestha Hospital provides comprehensive services to support patient 
-                    health and well-being. The hospital offers a variety of packages tailored to patients' needs and budget.
+                    health and well-being. The hospital offers a variety of packages tailored to patients&#39; needs and budget.
                   </p>
                 </div>
               </div>
