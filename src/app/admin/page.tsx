@@ -27,6 +27,7 @@ export default function AdminPage() {
   const [filterDate, setFilterDate] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastRefreshed, setLastRefreshed] = useState<Date>(new Date());
 
   // Fetch data from API
   const fetchData = async () => {
@@ -57,6 +58,9 @@ export default function AdminPage() {
       // Clean old records (older than 7 days)
       await fetch('/api/contacts', { method: 'DELETE' });
       await fetch('/api/appointments', { method: 'DELETE' });
+      
+      // Update last refreshed timestamp
+      setLastRefreshed(new Date());
     } catch (err) {
       console.error('Error fetching data:', err);
       // Type guard to check if err is an Error object
@@ -70,9 +74,17 @@ export default function AdminPage() {
     }
   };
 
-  // Load data on component mount
+  // Load data on component mount and set up interval for auto-refresh
   useEffect(() => {
     fetchData();
+    
+    // Set up interval to refresh data every 5 minutes (300 seconds)
+    const interval = setInterval(() => {
+      fetchData();
+    }, 300000); // 300000 milliseconds = 5 minutes
+    
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   const filteredContacts = filterDate
@@ -129,6 +141,9 @@ export default function AdminPage() {
                 Admin Dashboard
               </h1>
               <p className="text-gray-600">Manage contacts and appointments with ease</p>
+              <p className="text-sm text-gray-500 mt-1">
+                Last updated: {lastRefreshed.toLocaleTimeString()}
+              </p>
             </div>
             <button
               onClick={fetchData}
@@ -374,7 +389,10 @@ export default function AdminPage() {
                 madhuramkulshrestha447@gmail.com
               </a>
             </p>
-            <p className="text-gray-500 text-xs mt-4">
+            <p className="text-gray-500 text-xs mt-2">
+              Dashboard auto-refreshes every 5 minutes
+            </p>
+            <p className="text-gray-500 text-xs mt-1">
               Designed and developed by Madhuram Kulshrestha
             </p>
           </div>

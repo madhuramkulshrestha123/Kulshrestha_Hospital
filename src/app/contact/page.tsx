@@ -23,39 +23,51 @@ export default function ContactUs(): JSX.Element {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Form validation could be added here
     console.log('Form submitted:', formData);
     
-    // Save to localStorage for admin access
-    const storedContacts = localStorage.getItem("contacts");
-    const contacts = storedContacts ? JSON.parse(storedContacts) : [];
-    const newContact = {
-      id: Date.now().toString(),
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      date: new Date().toLocaleDateString()
-    };
-    contacts.push(newContact);
-    localStorage.setItem("contacts", JSON.stringify(contacts));
-    
-    setShowSuccessMessage(true);
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    
-    // Hide success message after 3 seconds
-    setTimeout(() => {
-      setShowSuccessMessage(false);
-    }, 3000);
+    try {
+      // Submit to API instead of localStorage
+      const response = await fetch('/api/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setShowSuccessMessage(true);
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000);
+      } else {
+        console.error('Failed to submit contact:', result.error);
+        // Handle error case
+      }
+    } catch (error) {
+      console.error('Error submitting contact:', error);
+      // Handle error case
+    }
   };
 
   return (

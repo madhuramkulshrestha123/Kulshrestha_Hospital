@@ -68,41 +68,53 @@ export default function Home(): JSX.Element {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Form validation could be added here
     console.log('Form submitted:', formData);
     
-    // Save to localStorage for admin access
-    const storedAppointments = localStorage.getItem("appointments");
-    const appointments = storedAppointments ? JSON.parse(storedAppointments) : [];
-    const newAppointment = {
-      id: Date.now().toString(),
-      patientName: formData.patientName,
-      mobileNumber: formData.mobileNumber,
-      date: formData.date,
-      timeSlot: formData.timeSlot,
-      message: formData.message,
-      submittedAt: new Date().toISOString()
-    };
-    appointments.push(newAppointment);
-    localStorage.setItem("appointments", JSON.stringify(appointments));
-    
-    setShowSuccessMessage(true);
-    
-    // Reset form
-    setFormData({
-      patientName: '',
-      mobileNumber: '',
-      date: '',
-      timeSlot: '',
-      message: ''
-    });
-    
-    // Hide success message after 3 seconds
-    setTimeout(() => {
-      setShowSuccessMessage(false);
-    }, 3000);
+    try {
+      // Submit to API instead of localStorage
+      const response = await fetch('/api/appointments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          patientName: formData.patientName,
+          mobileNumber: formData.mobileNumber,
+          date: formData.date,
+          timeSlot: formData.timeSlot,
+          message: formData.message,
+        }),
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setShowSuccessMessage(true);
+        
+        // Reset form
+        setFormData({
+          patientName: '',
+          mobileNumber: '',
+          date: '',
+          timeSlot: '',
+          message: ''
+        });
+        
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000);
+      } else {
+        console.error('Failed to submit appointment:', result.error);
+        // Handle error case
+      }
+    } catch (error) {
+      console.error('Error submitting appointment:', error);
+      // Handle error case
+    }
   };
 
   // Cards data
