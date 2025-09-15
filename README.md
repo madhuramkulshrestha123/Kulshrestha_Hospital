@@ -2,6 +2,9 @@
 
 A modern, responsive website for Kulshrestha Hospital built with Next.js 15, React 19, and Tailwind CSS.
 
+
+<img width="1132" height="529" alt="Screenshot 2025-09-15 032415" src="https://github.com/user-attachments/assets/0f7f53e5-2bce-466a-a5a7-d12c288d618b" />
+
 ## Features
 
 - Responsive design that works on all devices
