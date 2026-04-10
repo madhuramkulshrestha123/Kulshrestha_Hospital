@@ -10,7 +10,7 @@ export default function MeetOurDoctor(): JSX.Element {
 
   // Doctor profile data
   const doctorProfile = {
-    name: "Dr. Unnat Kulshrestra",
+    name: "Dr. Unnat Kulshrestha",
     specialization: "Pediatrician",
     education: [
       "MBBS - Baba Raghavdas Medical College, Gorakhpur, 1986(Unverified)",
