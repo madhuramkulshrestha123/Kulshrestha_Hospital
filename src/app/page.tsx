@@ -139,9 +139,9 @@ export default function Home(): JSX.Element {
 
   // Doctor profile data
   const doctorProfile = {
-    name: "Dr. Unnat Kulshrestra",
+    name: "Dr. Unnat Kulshrestha",
     specialization: "Pediatrician",
-    description: "Dr. Unnat Kulshrestra is a Pediatrician in Tajganj, Agra and has an experience of 35 years in this field. Dr. Unnat Kulshrestra practices at Dr. Unnat Kulshrestha in Tajganj, Agra and Upadhyay Hospital in New Agra, Agra. He completed MBBS from Baba Raghavdas Medical College, Gorakhpur in 1986 and MD - Pediatrics from Baba Raghavdas Medical College, Gorakhpur in 1990.",
+    description: "Dr. Unnat Kulshrestha is a Pediatrician in Tajganj, Agra and has an experience of 35 years in this field. Dr. Unnat Kulshrestra practices at Dr. Unnat Kulshrestha in Tajganj, Agra and Upadhyay Hospital in New Agra, Agra. He completed MBBS from Baba Raghavdas Medical College, Gorakhpur in 1986 and MD - Pediatrics from Baba Raghavdas Medical College, Gorakhpur in 1990.",
     memberships: "He is a member of Indian Medical Association (IMA) and Indian Academy of Paediatrics (IAP).",
     services: "Some of the services provided by the doctor are: Measles Treatment, Bronchial Asthma Treatment, Genetic Diseases, Newborn Jaundice and Limping child etc."
   };
