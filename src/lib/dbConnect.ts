@@ -2,7 +2,9 @@ import mongoose, { ConnectOptions } from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-if (!MONGODB_URI) {
+// Only throw error in production if MONGODB_URI is missing
+// In development, we can work without MongoDB
+if (!MONGODB_URI && process.env.NODE_ENV === 'production') {
   throw new Error(
     'Please define the MONGODB_URI environment variable inside .env.local'
   );
@@ -27,6 +29,11 @@ if (!cached) {
 }
 
 async function dbConnect() {
+  // If no MongoDB URI is provided, return null to indicate no database connection
+  if (!MONGODB_URI) {
+    return null;
+  }
+
   if (cached && cached.conn) {
     return cached.conn;
   }

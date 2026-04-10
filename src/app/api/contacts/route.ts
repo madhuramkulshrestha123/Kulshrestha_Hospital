@@ -4,7 +4,12 @@ import Contact from '@/lib/models/Contact';
 
 export async function GET() {
   try {
-    await dbConnect();
+    const dbConnection = await dbConnect();
+    
+    // If no database connection, return empty array
+    if (!dbConnection) {
+      return NextResponse.json({ success: true, data: [] });
+    }
     
     // Get all contacts, sorted by date (newest first)
     const contacts = await Contact.find({}).sort({ date: -1 });
@@ -18,7 +23,15 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await dbConnect();
+    const dbConnection = await dbConnect();
+    
+    // If no database connection, return error
+    if (!dbConnection) {
+      return NextResponse.json({ 
+        success: false, 
+        error: 'Database not configured. Please set MONGODB_URI environment variable.' 
+      }, { status: 503 });
+    }
     
     const body = await request.json();
     
@@ -43,7 +56,12 @@ export async function POST(request: Request) {
 // Delete contacts older than 7 days
 export async function DELETE() {
   try {
-    await dbConnect();
+    const dbConnection = await dbConnect();
+    
+    // If no database connection, return success (nothing to delete)
+    if (!dbConnection) {
+      return NextResponse.json({ success: true, deletedCount: 0 });
+    }
     
     // Calculate the date 7 days ago
     const sevenDaysAgo = new Date();
